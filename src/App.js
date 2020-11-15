@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from "axios";
 
 const study1 = {
     // const movieList = [
@@ -55,15 +56,15 @@ const study1 = {
 
 class App extends React.Component {
     state = {
-        count : 0
+        count: 0
     }
 
     add = () => {
-        this.setState(current => ({count : current.count + 1}));
+        this.setState(current => ({count: current.count + 1}));
     }
 
     minus = () => {
-        this.setState(current => ({count : current.count - 1}));
+        this.setState(current => ({count: current.count - 1}));
     }
 
     render() {
@@ -71,7 +72,8 @@ class App extends React.Component {
             <div>
                 <p>
                     count : {this.state.count}&nbsp;
-                    <button onClick={this.add}>+</button>&nbsp;
+                    <button onClick={this.add}>+</button>
+                    &nbsp;
                     <button onClick={this.minus}>-</button>
                 </p>
             </div>
