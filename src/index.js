@@ -5,12 +5,12 @@ import App2 from './App2';
 import MovieApp from "./MovieApp";
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/*<App />*/}
-    <App2 />
-    {/*<MovieApp/>*/}
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        {/*<App />*/}
+        <App2/>
+        {/*<MovieApp/>*/}
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 
