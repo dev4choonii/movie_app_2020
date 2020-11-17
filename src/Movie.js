@@ -16,7 +16,7 @@ Movie.propTypes = {
     year: PropTypes.number.isRequired,
     runtime: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
-    // poster: PropTypes.string.isRequired
+    poster: PropTypes.string.isRequired
 }
 
 export default Movie;
