@@ -7,8 +7,8 @@ import MovieApp from "./MovieApp";
 ReactDOM.render(
     <React.StrictMode>
         {/*<App />*/}
-        <App2/>
-        {/*<MovieApp/>*/}
+        {/*<App2/>*/}
+        <MovieApp/>
     </React.StrictMode>,
     document.getElementById('root')
 );
