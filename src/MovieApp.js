@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 
 class MovieApp extends React.Component {
     state = {
@@ -14,31 +15,39 @@ class MovieApp extends React.Component {
         this.setState({
             isLoading: false,
             movieList: movies
-        });
+        })
     }
 
     componentDidMount() {
-        this.getMovieList();
+        this.getMovieList()
     }
 
     render() {
         let {isLoading, movieList} = this.state;
         return (
-            <div>
+            <section className="container">
                 {isLoading
-                    ? 'Loading...'
-                    : movieList.map(movie => {
-                        return (
-                            <Movie key={movie.id}
-                                   rating={movie.rating}
-                                   runtime={movie.runtime}
-                                   year={movie.year}
-                                   poster={movie.medium_cover_image}
-                                   title={movie.title}/>
-                        );
-                    })
+                    ? (
+                        <div className="loader">
+                            <span className="loader__text">Loading...</span>
+                        </div>
+                    )
+                    : (
+                        <div className="movies">
+                            {movieList.map(movie => {
+                                return (
+                                    <Movie key={movie.id}
+                                           title={movie.title}
+                                           year={movie.year}
+                                           poster={movie.medium_cover_image}
+                                           summary={movie.summary}
+                                           genres={movie.genres}/>
+                                )
+                            })}
+                        </div>
+                    )
                 }
-            </div>
+            </section>
         )
     }
 }
